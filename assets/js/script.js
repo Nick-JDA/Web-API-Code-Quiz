@@ -134,6 +134,8 @@ var startscreen = document.getElementById("startscreen");
 var quizpage = document.getElementById("quizpage");
 var endpage = document.getElementById("endpage");
 var question = document.getElementById("question");
+var timeEl = document.getElementById("time");
+var secondsLeft = 75;
 var answer1 = document.getElementById("option-1");
 //add
 var answer2 = document.getElementById("option-2");
@@ -146,6 +148,7 @@ function startQuiz() {
     startscreen.classList.toggle("inactive")
     quizpage.classList.toggle("inactive")
     displayNextQuestion()
+    startTimer()
 }
 
 function displayNextQuestion() {
@@ -158,6 +161,22 @@ function displayNextQuestion() {
 }
 
 
-startButton.addEventListener("click", startQuiz);
 
+function startTimer() {
+    var timerInterval = setInterval(function() {
+        secondsLeft--;
+        timeEl.textContent = "Time: " + secondsLeft;
+
+        if (secondsLeft === 0) {
+            clearInterval(timerInterval);
+        }
+    }, 1000);
+}
+
+
+startButton.addEventListener("click", startQuiz);
+answer1.addEventListener("click", displayNextQuestion);
+answer2.addEventListener("click", displayNextQuestion);
+answer3.addEventListener("click", displayNextQuestion);
+answer4.addEventListener("click", displayNextQuestion);
 //event listernrs go bottom
