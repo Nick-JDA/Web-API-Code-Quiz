@@ -147,20 +147,9 @@ var answer4 = document.getElementById("option-4");
 function startQuiz() {
     startscreen.classList.toggle("inactive")
     quizpage.classList.toggle("inactive")
-    displayNextQuestion()
     startTimer()
+    displayNextQuestion()
 }
-
-function displayNextQuestion() {
-    var currentQuestion = questions[indexQ]
-    question.textContent = currentQuestion.question
-    answer1.textContent = currentQuestion.answers[0]
-    answer2.textContent = currentQuestion.answers[1]
-    answer3.textContent = currentQuestion.answers[2]
-    answer4.textContent = currentQuestion.answers[3]
-}
-
-
 
 function startTimer() {
     var timerInterval = setInterval(function() {
@@ -173,6 +162,23 @@ function startTimer() {
     }, 1000);
 }
 
+function displayNextQuestion() {
+    var currentQuestion = questions[indexQ]
+    if (indexQ > 3) {
+        endQuiz()
+    }
+    
+    question.textContent = currentQuestion.question
+    answer1.textContent = currentQuestion.answers[0]
+    answer2.textContent = currentQuestion.answers[1]
+    answer3.textContent = currentQuestion.answers[2]
+    answer4.textContent = currentQuestion.answers[3]
+}
+
+function endQuiz() {
+    quizpage.classList.toggle("inactive")
+    endpage.classList.toggle("inactive")
+}
 
 startButton.addEventListener("click", startQuiz);
 answer1.addEventListener("click", displayNextQuestion);
