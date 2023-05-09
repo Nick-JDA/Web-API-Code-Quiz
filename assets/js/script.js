@@ -112,8 +112,8 @@ var questions = [
     },
     {
         question: "The condition in an if/else statement is enclosed within _____.",
-        answers: ["1. quotes", "2. curly brackets", "3. parentheses", "4. square brackets"],
-        correct: "3. parenthesis"
+        answers: ["1. parentheses", "2. curly brackets", "3. quotes", "4. square brackets"],
+        correct: "1. parentheses"
     },
     {
         question: "String values must be enclosed within _____ when being assigned to variables.",
@@ -173,13 +173,16 @@ function displayNextQuestion() {                            // displayNextQuesti
     if (indexQ > 3) {
         endQuiz()
     }
-    
     question.textContent = currentQuestion.question
     answer1.textContent = currentQuestion.answers[0]
     answer2.textContent = currentQuestion.answers[1]
     answer3.textContent = currentQuestion.answers[2]
     answer4.textContent = currentQuestion.answers[3]
 }
+
+ function checkAnswer() {
+    
+ }
 
 function endQuiz() {                                         // endQuiz function that hides the quizpage and shows the endpage
     quizpage.classList.toggle("inactive")
