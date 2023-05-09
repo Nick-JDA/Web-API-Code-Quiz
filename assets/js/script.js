@@ -106,24 +106,24 @@
 
 var questions = [
     {
-        question: "placeholder1",
-        answers: ["A", "B", "C", "D"],
-        correct: "B"
+        question: "Commonly used data types DO NOT include:",
+        answers: ["1. strings", "2. boolean", "3. alerts", "4. numbers"],
+        correct: "3. alerts"
     },
     {
-        question: "placeholder2",
-        answers: ["A", "B", "C", "D"],
-        correct: "A"
+        question: "The condition in an if/else statement is enclosed within _____.",
+        answers: ["1. quotes", "2. curly brackets", "3. parentheses", "4. square brackets"],
+        correct: "3. parenthesis"
     },
     {
-        question: "placeholder3",
-        answers: ["A", "B", "C", "D"],
-        correct: "C"
+        question: "String values must be enclosed within _____ when being assigned to variables.",
+        answers: ["1. commas", "2. curly brackets", "3. quotes", "4. parentheses"],
+        correct: "3. quotes"
     },
     {
-        question: "placeholder4",
-        answers: ["A", "B", "C", "D"],
-        correct: "D"
+        question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+        answers: ["1. JavaScript", "2. terminal/bash", "3. for loops", "4. console.log"],
+        correct: "4. console.log"
     }
 ]
 
@@ -148,7 +148,12 @@ function startQuiz() {
     startscreen.classList.toggle("inactive")
     quizpage.classList.toggle("inactive")
     startTimer()
-    displayNextQuestion()
+
+    question.textContent = questions[0].question
+    answer1.textContent = questions[0].answers[0]
+    answer2.textContent = questions[0].answers[1]
+    answer3.textContent = questions[0].answers[2]
+    answer4.textContent = questions[0].answers[3]
 }
 
 function startTimer() {
@@ -162,7 +167,8 @@ function startTimer() {
     }, 1000);
 }
 
-function displayNextQuestion() {
+function displayNextQuestion() {                            // displayNextQuestion function that shows the next question with it's proper answers and questions
+    indexQ ++;                                               
     var currentQuestion = questions[indexQ]
     if (indexQ > 3) {
         endQuiz()
@@ -175,14 +181,20 @@ function displayNextQuestion() {
     answer4.textContent = currentQuestion.answers[3]
 }
 
-function endQuiz() {
+function endQuiz() {                                         // endQuiz function that hides the quizpage and shows the endpage
     quizpage.classList.toggle("inactive")
     endpage.classList.toggle("inactive")
 }
 
-startButton.addEventListener("click", startQuiz);
-answer1.addEventListener("click", displayNextQuestion);
-answer2.addEventListener("click", displayNextQuestion);
-answer3.addEventListener("click", displayNextQuestion);
-answer4.addEventListener("click", displayNextQuestion);
-//event listernrs go bottom
+startButton.addEventListener("click", startQuiz);            // Event listener for when start button is clicked then the startQuiz function is called    
+answer1.addEventListener("click", displayNextQuestion);      // Event listener for when one of the answers is clicked then the displayNextQuestion function is called
+answer2.addEventListener("click", displayNextQuestion);      // Event listener for when one of the answers is clicked then the displayNextQuestion function is called
+answer3.addEventListener("click", displayNextQuestion);      // Event listener for when one of the answers is clicked then the displayNextQuestion function is called
+answer4.addEventListener("click", displayNextQuestion);      // Event listener for when one of the answers is clicked then the displayNextQuestion function is called
+//event listeners go bottom
+
+
+// how to make timer decrease when wrong answer
+//  if (answers === incorrect) {
+//     secondsLeft - 20;
+//  }
