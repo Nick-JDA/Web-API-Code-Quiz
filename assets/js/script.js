@@ -127,6 +127,17 @@ var questions = [
     }
 ]
 
+//couldn't get score saving to work but here's some commented code :)
+
+// var initial = document.getElementById("initials");
+
+// var initialScore = {
+//     initial: initial.value,
+//     score: timeEl.value
+// };
+
+// localStorage.setItem("initialScore", JSON.stringify(initialScore));
+
 var indexQ = 0 // questions[indexQ]
 var end = false;
 var scoreNum = document.getElementById("scoreNum");
@@ -226,8 +237,3 @@ answer4.addEventListener("click", function(event) {
 });      // Event listener for when one of the answers is clicked then the displayNextQuestion function is called
 //event listeners go bottom
 
-
-// how to make timer decrease when wrong answer
-//  if (answers === incorrect) {
-//     secondsLeft - 20;
-//  }
