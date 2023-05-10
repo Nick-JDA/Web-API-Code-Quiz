@@ -9,13 +9,12 @@
 </head>
 
 <header>
-    <h4><a href = "#highscores">View Highscores</a></h4>
-    <h4 id = "time">Time: </h4>
+    <h4 id = "time">Time:<span id = "scoreNum"></span> </h4>
 </header>
 
 <body>
     <section id = "startscreen">
-        <h1 id = "titlecard">Title</h1> <!--changing title card space ie: "Highscores", "All done", "coding quiz challenge"-->
+        <h1 id = "titlecard">JavaScript fundamentals quiz</h1> <!--changing title card space ie: "Highscores", "All done", "coding quiz challenge"-->
         <ul>
             <li class = "savedscore">saved score</li> <!--saved scores cards list-->
         </ul>
@@ -27,10 +26,10 @@
     <section class = "inactive" id = "quizpage">
         <h2 id = "question">questions</h2>
         <ul>
-            <li><button id = "option-1" >1</button></li>
-            <li><button id = "option-2" >2</button></li>
-            <li><button id = "option-3" >3</button></li>
-            <li><button id = "option-4" >4</button></li>
+            <li><button class = answerb id = "option-1" >1</button></li>
+            <li><button class = answerb id = "option-2" >2</button></li>
+            <li><button class = answerb id = "option-3" >3</button></li>
+            <li><button class = answerb id = "option-4" >4</button></li>
         </ul>
     </section>
 

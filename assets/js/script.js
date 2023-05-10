@@ -128,7 +128,8 @@ var questions = [
 ]
 
 var indexQ = 0 // questions[indexQ]
-
+var end = false;
+var scoreNum = document.getElementById("scoreNum");
 var startButton = document.getElementById("start");
 var startscreen = document.getElementById("startscreen");
 var quizpage = document.getElementById("quizpage");
@@ -163,6 +164,13 @@ function startTimer() {
 
         if (secondsLeft === 0) {
             clearInterval(timerInterval);
+            endQuiz();
+        }
+
+        if (secondsLeft > 0 && end == true) {
+            scoreNum = secondsLeft;
+            timeEl.textcontent = scoreNum;
+            clearInterval(timerInterval);
         }
     }, 1000);
 }
@@ -171,6 +179,7 @@ function displayNextQuestion() {                            // displayNextQuesti
     indexQ ++;                                               
     var currentQuestion = questions[indexQ]
     if (indexQ > 3) {
+        end = true;
         endQuiz()
     }
     question.textContent = currentQuestion.question
@@ -180,20 +189,41 @@ function displayNextQuestion() {                            // displayNextQuesti
     answer4.textContent = currentQuestion.answers[3]
 }
 
- function checkAnswer() {
-    
+ function checkAnswer(selectedAnswer) {
+    console.log(selectedAnswer);
+    if (selectedAnswer === questions[indexQ].correct) {
+        console.log('correct');
+    } else {
+        console.log('incorrect');
+        secondsLeft -= 15;
+    }
  }
 
 function endQuiz() {                                         // endQuiz function that hides the quizpage and shows the endpage
     quizpage.classList.toggle("inactive")
     endpage.classList.toggle("inactive")
+    timeEl.textcontent = " ";
+    var scoreEl = document.getElementById("time");
+    scoreEl.setAttribute("timeEl.textContent", "secondsLeft");
 }
 
 startButton.addEventListener("click", startQuiz);            // Event listener for when start button is clicked then the startQuiz function is called    
-answer1.addEventListener("click", displayNextQuestion);      // Event listener for when one of the answers is clicked then the displayNextQuestion function is called
-answer2.addEventListener("click", displayNextQuestion);      // Event listener for when one of the answers is clicked then the displayNextQuestion function is called
-answer3.addEventListener("click", displayNextQuestion);      // Event listener for when one of the answers is clicked then the displayNextQuestion function is called
-answer4.addEventListener("click", displayNextQuestion);      // Event listener for when one of the answers is clicked then the displayNextQuestion function is called
+answer1.addEventListener("click", function(event) {
+    checkAnswer(event.target.textContent);
+    displayNextQuestion();
+});      // Event listener for when one of the answers is clicked then the displayNextQuestion function is called
+answer2.addEventListener("click", function(event) {
+    checkAnswer(event.target.textContent);
+    displayNextQuestion();
+});      // Event listener for when one of the answers is clicked then the displayNextQuestion function is called
+answer3.addEventListener("click", function(event) {
+    checkAnswer(event.target.textContent);
+    displayNextQuestion();
+});     // Event listener for when one of the answers is clicked then the displayNextQuestion function is called
+answer4.addEventListener("click", function(event) {
+    checkAnswer(event.target.textContent);
+    displayNextQuestion();
+});      // Event listener for when one of the answers is clicked then the displayNextQuestion function is called
 //event listeners go bottom
 
 

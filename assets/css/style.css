@@ -1,4 +1,28 @@
+body {
+    background-color: yellowgreen;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+}
+
 .inactive {
     display: none;
 }
 
+button {
+    font-weight: bolder;
+    color: black;
+    background-color: aqua;
+}
+
+li {
+    list-style-type: none;
+}
+
+button:hover {
+    background-color: #994fff;
+}
+
+#titlecard {
+    color: black;
+}
