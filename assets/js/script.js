@@ -104,7 +104,7 @@
                     //upon press user is brought back to title card
     //loop restarts
 
-var questions = [
+var questions = [                                                               // creates variables that represents the questions as objects in an array 
     {
         question: "Commonly used data types DO NOT include:",
         answers: ["1. strings", "2. boolean", "3. alerts", "4. numbers"],
@@ -139,24 +139,34 @@ var questions = [
 // localStorage.setItem("initialScore", JSON.stringify(initialScore));
 
 var indexQ = 0 // questions[indexQ]
+
 var end = false;
+
 var scoreNum = document.getElementById("scoreNum");
+
 var startButton = document.getElementById("start");
+
 var startscreen = document.getElementById("startscreen");
+
 var quizpage = document.getElementById("quizpage");
+
 var endpage = document.getElementById("endpage");
+
 var question = document.getElementById("question");
+
 var timeEl = document.getElementById("time");
+
 var secondsLeft = 75;
+
 var answer1 = document.getElementById("option-1");
-//add
+
 var answer2 = document.getElementById("option-2");
-//add
+
 var answer3 = document.getElementById("option-3");
-//add event listeners
+
 var answer4 = document.getElementById("option-4");
-//add event listers
-function startQuiz() {
+
+function startQuiz() {                                     //function that starts quiz by hiding the start page and showing the quizpage, starting the timer, and displaying first question 
     startscreen.classList.toggle("inactive")
     quizpage.classList.toggle("inactive")
     startTimer()
@@ -168,7 +178,7 @@ function startQuiz() {
     answer4.textContent = questions[0].answers[3]
 }
 
-function startTimer() {
+function startTimer() {                                    //function that operates the timer and gives perameters for if the quiz ends/if the time runs out
     var timerInterval = setInterval(function() {
         secondsLeft--;
         timeEl.textContent = "Time: " + secondsLeft;
@@ -200,7 +210,7 @@ function displayNextQuestion() {                            // displayNextQuesti
     answer4.textContent = currentQuestion.answers[3]
 }
 
- function checkAnswer(selectedAnswer) {
+ function checkAnswer(selectedAnswer) {                    //function that gives a console log for if the question is correct or incorrect and if incorrect gives time penalty of 15 seconds
     console.log(selectedAnswer);
     if (selectedAnswer === questions[indexQ].correct) {
         console.log('correct');

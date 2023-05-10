@@ -1,28 +1,28 @@
-body {
+body {                                /*changes styling and positioning for body element and all its children*/
     background-color: yellowgreen;
     margin-left: auto;
     margin-right: auto;
     width: 400px;
 }
 
-.inactive {
+.inactive {                           /*sets elements with inactive class to display none*/
     display: none;
 }
 
-button {
+button {                              /*sets styling for button elements*/
     font-weight: bolder;
     color: black;
     background-color: aqua;
 }
 
-li {
+li {                                  /*sets styling for list elements*/
     list-style-type: none;
 }
 
-button:hover {
+button:hover {                        /*makes button elements background colour change when hovered over my mouse*/
     background-color: #994fff;
 }
 
-#titlecard {
+#titlecard {                          /*gives title black text*/
     color: black;
 }
