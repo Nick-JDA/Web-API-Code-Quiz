@@ -210,7 +210,7 @@ function displayNextQuestion() {                            // displayNextQuesti
     answer4.textContent = currentQuestion.answers[3]
 }
 
- function checkAnswer(selectedAnswer) {                    //function that gives a console log for if the question is correct or incorrect and if incorrect gives time penalty of 15 seconds
+ function checkAnswer(selectedAnswer) {                     //function that gives a console log for if the question is correct or incorrect and if incorrect gives time penalty of 15 seconds
     console.log(selectedAnswer);
     if (selectedAnswer === questions[indexQ].correct) {
         console.log('correct');
@@ -232,18 +232,18 @@ startButton.addEventListener("click", startQuiz);            // Event listener f
 answer1.addEventListener("click", function(event) {
     checkAnswer(event.target.textContent);
     displayNextQuestion();
-});      // Event listener for when one of the answers is clicked then the displayNextQuestion function is called
+});                                                          // Event listener for when one of the answers is clicked then the displayNextQuestion function is called
 answer2.addEventListener("click", function(event) {
     checkAnswer(event.target.textContent);
     displayNextQuestion();
-});      // Event listener for when one of the answers is clicked then the displayNextQuestion function is called
+});                                                          // Event listener for when one of the answers is clicked then the displayNextQuestion function is called
 answer3.addEventListener("click", function(event) {
     checkAnswer(event.target.textContent);
     displayNextQuestion();
-});     // Event listener for when one of the answers is clicked then the displayNextQuestion function is called
+});                                                          // Event listener for when one of the answers is clicked then the displayNextQuestion function is called
 answer4.addEventListener("click", function(event) {
     checkAnswer(event.target.textContent);
     displayNextQuestion();
-});      // Event listener for when one of the answers is clicked then the displayNextQuestion function is called
+});                                                          // Event listener for when one of the answers is clicked then the displayNextQuestion function is called
 //event listeners go bottom
 
