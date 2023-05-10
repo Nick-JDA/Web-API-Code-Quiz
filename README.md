@@ -14,7 +14,9 @@ N/A
 
 This page is used by clicking the start game button and answering the questions by clicking the appropriate answer buttons.
 
-```![alt text](assets/images/screenshot.png)
+Screenshot:
+![alt text](./assets/images/nick-jda.github.io_Web-API-Code-Quiz_.png)
 
-Deployed URL:
+Deployed URL: https://nick-jda.github.io/Web-API-Code-Quiz/
+
 ---
